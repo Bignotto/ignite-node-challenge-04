@@ -19,7 +19,6 @@ class UsersRepository implements IUsersRepository {
   }
 
   create({ name, email }: ICreateUserDTO): User {
-    // TODO: doing user repository create
     const newUser = new User();
 
     Object.assign(newUser, { name, email });
@@ -47,8 +46,10 @@ class UsersRepository implements IUsersRepository {
     const updatedUser = new User();
     Object.assign(updatedUser, {
       id: receivedUser.id,
-      created_at: receivedUser.created_at,
+      name: receivedUser.name,
+      email: receivedUser.email,
       admin: true,
+      created_at: receivedUser.created_at,
     });
 
     filteredUsers.push(updatedUser);
