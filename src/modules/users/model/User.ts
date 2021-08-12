@@ -21,10 +21,6 @@ class User {
     this.updated_at = new Date();
     this.admin = false;
   }
-
-  public set turnAdmin(value: boolean) {
-    this.admin = value;
-  }
 }
 
 export { User };
